@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="timeExampleModule">
+<head>
+    <script src="lib/angular.min.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>AngularJS</title>
+</head>
+<body>
+<div ng-controller="ClockCtrl">
+    Currrnt time is: {{time.now}}
+</div>
+
+<div ng-controller="DaLaoCtrl">
+    <table>
+        <tr>
+            <th >Name</th>
+            <th>Company</th>
+            <th>Country</th>
+        </tr>
+        <tr ng-repeat="man in collection" ng-class="{oddrow: $index % 2 != 0, selected: $index==selectedRow}"
+            ng-click="selectDaLao($index)">
+            <td>{{man.name}}</td>
+            <td>{{man.company}}</td>
+            <td>{{man.country}}</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
